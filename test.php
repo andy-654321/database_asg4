@@ -2,14 +2,53 @@
 <html>
  <body>
 <?php
-	$con = mysql_connect("localhost", "root", "coursework")
+	$userErr = $tableErr = "";
+	$user = $table = "";
+	
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		if (empty($_POST["user"])){
+			$userErr = "User is required";
+		}
+		else {
+			$user = test_input($_POST["user"]);
+		}
+	}
+	if ($_SERVER["REQUEST_METHOD"] == "POST"){
+		if (empty($_POST["table"])){
+			$tableErr = "Table is required";
+		}
+		else {
+			$table = test_input($_POST["table"]);
+		}
+	}
+
+	function test_input($data) {
+	  $data = trim($data);
+	  $data = stripslashes($data);
+	  $data = htmlspecialchars($data);
+	  return $data;
+	}
+	
+	switch($user){
+		case "Strong":
+			$password = "password3";
+			break;	
+		case "Medium":
+			$password = "password2";
+			break;	
+		case "Weak":
+			$password = "password1";
+			break;	
+	}
+
+	$con = mysql_connect("localhost", "$user", "$password")
 		or die ("Couldn't connect to database:" . mysql_error());
 	
 	echo "Connected successfully";
 
 	mysql_select_db("assignment4") or die("Couldn't select db");
 
-	$query = "select * from instructor";
+	$query = "select * from $table";
 	
 	$result = mysql_query($query) or die("Query failed: " . mysql_error());
 
