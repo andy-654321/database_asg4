@@ -1,10 +1,41 @@
 <!DOCTYPE HTML>
 <html>
-  <body>
-    <form method="post" action="test.php">
-      <input type="submit" name="submit" value="Submit">
-    </form>
-    <p>Hello there</p>
-  </body>
+	<body>
+		<?php
+			$userErr = $tableErr = "";
+			$user = $table = "";
+			
+			if ($_SERVER["REQUEST_METHOD"] == "POST"){
+				if (empty($_POST["user"])){
+					$userErr = "User is required";
+				}
+				else {
+					$name = test_input($_POST["name"]);
+				}
+			}
+			if ($_SERVER["REQUEST_METHOD"] == "POST"){
+				if (empty($_POST["table"])){
+					$tableErr = "User is required";
+				}
+				else {
+					$name = test_input($_POST["name"]);
+				}
+			}
+		?>
+		<form method="post" action="test.php">
+			<H3>User</H3>
+			<input type="radio" name="user" value="Strong" checked>Strong<br>
+			<input type="radio" name="user" value="Medium">Medium<br>
+			<input type="radio" name="user" value="Weak">Weak<br>
+
+			<H3>Table Name</H3>
+			<input type="radio" name="table" value="instructor">Instructor<br>
+			<input type="radio" name="table" value="department">Department<br>
+			<input type="radio" name="table" value="course">Course<br>
+
+			<input type="submit" name="submit" value="Submit">
+
+		<p>Hello there</p>
+	</body>
 </html>
 
