@@ -21,8 +21,13 @@ delete from mysql.columns_priv where User="Weak";
 flush privileges;
 
 create user "Strong"@"localhost" identified by "password3";
+grant all privileges on * to Strong;
+
 create user "Medium"@"localhost" identified by "password2";
+grant select, update, insert on * to Medium;
+
 create user "Weak"@"localhost" identified by "password1";
+grant select on * to Weak;
 
 create table department (dept_name varchar(20), building varchar(15), budget numeric(12,2) check (budget > 0), primary key (dept_name));
 
