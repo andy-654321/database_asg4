@@ -14,9 +14,9 @@ let query5 = document.querySelector('#query5');
 let query6 = document.querySelector('#query6');
 btn1.addEventListener('click', function(e){input.value = query1.textContent;})
 btn2.addEventListener('click', function(e){input.value = query2.textContent;})
-btn3.addEventListener('click', function(e){input.value = query3.innerHTML;})
-btn4.addEventListener('click', function(e){input.value = query4.innerHTML;})
-btn5.addEventListener('click', function(e){input.value = query5.innerHTML;})
-btn6.addEventListener('click', function(e){input.value = query6.innerHTML;})
+btn3.addEventListener('click', function(e){input.value = query3.textContent;})
+btn4.addEventListener('click', function(e){input.value = query4.textContent;})
+btn5.addEventListener('click', function(e){input.value = query5.textContent;})
+btn6.addEventListener('click', function(e){input.value = query6.textContent;})
 
 
