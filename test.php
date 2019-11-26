@@ -44,14 +44,12 @@
 	$con = mysql_connect("localhost", "$user", "$password")
 		or die ("Couldn't connect to database:" . mysql_error());
 	
-	echo "Connected successfully";
 
 	mysql_select_db("assignment4") or die("Couldn't select db");
 
-	$query = "select * from $table";
-	
+	$query = $_POST["input"];
 	$result = mysql_query($query) or die("Query failed: " . mysql_error());
-
+	echo $query;
 	echo "<table border=\"1\">\n";
 	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		echo "\t<tr>\n";
