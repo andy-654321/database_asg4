@@ -1,0 +1,28 @@
+
+.question{
+	color: blue;
+}
+
+.query{
+	color: green;
+}
+
+.input{
+	width: 95%;
+	margin: 10px;
+}
+
+.btn{
+	display: inline;
+}
+
+.container {
+	width: 95vw;
+	height: 50vh;
+	overflow: scroll;
+}
+
+.box{
+	padding: 15px;
+margin-bottom: 10px;
+}
