@@ -48,9 +48,15 @@
 	mysql_select_db("assignment4") or die("Couldn't select db");
 
 	$query = $_POST["input"];
+	echo "Using user: <b>$user</b><br>";
+	if($user === "Weak" && strpos($query, "DELETE") !== false){
+		echo "Insufficient authorization level. Delete operation failed.<br>";
+		die();
+	}
 	$result = mysql_query($query) or die("Query failed: " . mysql_error());
-	echo $query;
-	echo "<table border=\"1\">\n";
+	echo "Query succeeded.<br>";
+	echo "Entered query: <code>$query</code><br>";
+	echo "<br><table border=\"1\">\n";
 	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		echo "\t<tr>\n";
 		foreach ($line as $col_value){

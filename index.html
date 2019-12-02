@@ -13,37 +13,36 @@
 		<div class="container">
 			<div class="box">
 				<p><span class="question">Question 1:</span><br><code>Select the average salary of the instructors in each department. (connecting as Strong, Medium, and Weak users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query1">select dept_name,avg(salary) as s from instructor group by dept_name</code></p>
+				<p><span class="query"> Query:</span><br> 
+					<code id="query1">select dept_name,avg(salary) as s from instructor group by dept_name</code></p>
 				<input type="button" class="btn" id="btn1" value="Copy"/><br><br>
 			</div>	
 			
 			<div class="box">
 				<p><span class="question">Question 2:</span><br><code>Increase the salary of all instructors with salary below 65k by 20%. (connecting as Strong, and Medium users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query2">update instructor set salary=salary*1.2 where salary < 65000;</code></p>
+				<p><span class="query"> Query:</span><br> 
+					<code id="query2">update instructor set salary=salary*1.2 where salary < 65000;</code></p>
 				<input type="button" class="btn" id="btn2" value="Copy"/><br><br>
 			</div>
 
 			<div class="box">	
-				<p><span class="question">Question 3:</span><br><code>Increase the salary of all instructors with salary below 65k by 20%. (connecting as Strong, and Medium users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query3">Insert Query Here</code></p>
+				<p><span class="question">Question 3:</span><br><code>Delete all instructors from the physics department</code></p>
+				<p><span class="query"> Query:</span><br> 
+					<code id="query3">delete from instructor where dept_name = "physics";</code></p>
 				<input type="button" class="btn" id="btn3" value="Copy"/><br><br>
 			</div>
 	
 			<div class="box">
-				<p><span class="question">Question 4:</span><br><code>Increase the salary of all instructors with salary below 65k by 20%. (connecting as Strong, and Medium users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query4">Insert Query Here</code></p>
+				<p><span class="question">Question 4:</span><br><code>Add 'office_no' attribute to the instructor table</code></p>
+				<p><span class="query"> Query:</span><br> 
+					<code id="query4">alter table instructor add office_no varchar(10);</code></p>
 				<input type="button" class="btn" id="btn4" value="Copy"/><br><br>
 			</div>
 			<div class="box">	
-				<p><span class="question">Question 5:</span><br><code>Increase the salary of all instructors with salary below 65k by 20%. (connecting as Strong, and Medium users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query5">Insert Query Here</code></p>
+				<p><span class="question">Question 5:</span><br><code>Drop 'course' table if it exists</code></p>
+				<p><span class="query"> Query:</span><br> 
+					<code id="query5">drop table if exists course;</code></p>
 				<input type="button" class="btn" id="btn5" value="Copy"/><br><br>
-			</div>
-			<div class="box">
-				<p><span class="question">Question 6:</span><br><code>Increase the salary of all instructors with salary below 65k by 20%. (connecting as Strong, and Medium users)</code></p>
-				<p><span class="query"> Query:</span><br> <code id="query6">Insert Query Here</code></p>
-	
-				<input type="button" class="btn" id="btn6" value="Copy"/><br><br>
 			</div>
 			</div>
 			<input type="input" name="input" class="input" placeholder="Input query..."/>
