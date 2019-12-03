@@ -56,7 +56,7 @@
 	$result = mysql_query($query) or die("Query failed: " . mysql_error());
 	echo "Query succeeded.<br>";
 	echo "Entered query: <code>$query</code><br>";
-	echo "<br><table align='center' border=\"1\">\n";
+	echo "<br><table border=\"1\">\n";
 	while ($line = mysql_fetch_array($result, MYSQL_ASSOC)) {
 		echo "\t<tr>\n";
 		foreach ($line as $col_value){
