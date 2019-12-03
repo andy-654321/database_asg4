@@ -8,6 +8,8 @@ fi
 
 echo "Success! Setting up environment now"
 
+#backup initial html folder
+[ -d html ] || cp -r /var/www/html .
 rm /var/www/html/*
 mysql -u root -pcoursework < database.txt
 
